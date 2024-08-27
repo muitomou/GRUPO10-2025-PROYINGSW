@@ -10,4 +10,4 @@ Este es el repositorio del *Grupo 9*, cutos integrantes son:
 
 ## Wiki
 
-> Obtener e
+> Puede acceder a la Wiki mediante el siguiente ([enlace](https://github.com/muitomou/GRUPO09-2024-PROYINF/wiki))
