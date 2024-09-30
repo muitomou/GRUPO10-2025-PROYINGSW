@@ -2,9 +2,9 @@
 
 Este es el repositorio del **Grupo 9**, cuyos integrantes son:
 
-* Integrante 1 - 202273622-4
+* Emiliano Garcia - 202273622-4
 * Tomás González - 202273609-7
-* Integrante 3 - 202273580-5
+* Benjamin Urrutia - 202273580-5
 * Mauro Castillo - 202273627-5
 * **Tutor**: Diego Debarca
 
