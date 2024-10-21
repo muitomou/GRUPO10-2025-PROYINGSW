@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="card text-bg-dark">
+        <img src="{% static 'banner-inicio.jpg' %}" class="card-img" alt="..." height="300">
+        <div class="card-img-overlay">
+            <h5 class="card-title fs-1">Boletines de Vigilancia e Inteligencia en Innovación</h5>
+            <p class="card-text"></p>
+            <p class="card-text"><small></small></p>
+        </div>
+  </div>
+
+    <div class="card mb-3" style="max-width: 900px;">
+        <div class="row g-0">
+        <div class="col-md-2">
+            <img src="{% static 'boletin-prueba.jpg' %}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-10">
+            <div class="card-body">
+            <h5 class="card-title">Adaptación y Mitigación al Cambio Climático. Boletín de Vigilancia e Inteligencia en Innovación, N°10 septiembre 2024</h5>
+            <p class="card-text"><small class="text-body-secondary">26-sep-2024</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}
