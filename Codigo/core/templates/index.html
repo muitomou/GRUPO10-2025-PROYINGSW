@@ -4,7 +4,7 @@
 {% block content %}
 
     <div class="card text-bg-dark">
-        <img src="{% static 'images/banner-inicio.jpeg' %}" class="card-img" alt="..." height="300" style="object-fit: cover;">
+        <img src="{% static 'images/banner-inicio.jpeg' %}" class="card-img" alt="..." style="object-fit: cover; max-height: 40vh;">
         <div class="card-img-overlay">
             <h5 class="card-title fs-1"  style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Vigilancia e Inteligencia en Innovación</h5>
             <p class="card-text"></p>
@@ -12,31 +12,21 @@
         </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
-    <div class="col">
+  <div class="row row-cols-1 row-cols-md-2 g-4 p-4 justify-content-around">
+    <div class="col-md-6">
         <a href="{% url 'boletines' %}" style="text-decoration: none;">
       <div class="card">
-        <img src="{% static 'images/boletines.jpg' %}" class="card-img-top" alt="..."  style="max-width: 500px; max-height: 500px;">
+        <img src="{% static 'images/boletines.jpg' %}" class="card-img-top" alt="..." style="object-fit: cover; max-height: 30vh;">
         <div class="card-body">
           <h5 class="card-title">Boletines de Vigilancia e Inteligencia en Innovación</h5>
         </div>
       </div>
     </a>
     </div>
-    <div class="col">
-        <a href="#" style="text-decoration: none;">
-      <div class="card">
-        <img src="{% static 'images/estudio-vigilancia.jpg' %}" class="card-img-top" alt="..." style="max-width: 500px; max-height: 500px">
-        <div class="card-body">
-          <h5 class="card-title">Estudios de Vigilancia</h5>
-        </div>
-      </div>
-    </a>
-    </div>
-    <div class="col">
-        <a href="#" style="text-decoration: none;">
-      <div class="card">
-        <img src="{% static 'images/panoramas.jpg' %}" class="card-img-top" alt="..." style="max-width: 500px; max-height: 500px;">
+    <div class="col-md-6">
+        <a href="{% url 'panoramas' %}" style="text-decoration: none;">
+    <div class="card">
+        <img src="{% static 'images/panoramas.jpg' %}" class="card-img-top" alt="..." style="object-fit: cover; max-height: 30vh;">
         <div class="card-body">
           <h5 class="card-title">Panoramas de Vigilancia</h5>
         </div>

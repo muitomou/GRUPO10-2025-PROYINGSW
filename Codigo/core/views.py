@@ -8,3 +8,9 @@ def index(request):
 
 def boletines(request):
     return render(request, 'boletines.html')
+
+def panoramas(request):
+    return render(request, 'panoramas.html')
+
+def perfil(request):
+    return render(request, 'perfil.html')
