@@ -1,5 +1,6 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import get_object_or_404,render
+from django.shortcuts import render
+from api.models import Boletin
 
 # Create your views here.
 
@@ -20,3 +21,23 @@ def login(request):
 
 def register(request):
     return render(request, 'register.html')
+
+def adminView(request):
+    return render(request, 'adminView.html')
+
+def crear_boletin(request):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descripcion = request.POST.get('descripcion')
+        fecha_publicacion = request.POST.get('fecha_publicacion')
+
+        # Crear boletín en la base de datos
+        Boletin.objects.create(
+            titulo=titulo,
+            descripcion=descripcion,
+            fecha_publicacion=fecha_publicacion
+        )
+
+        return redirect('boletin')  # Redirige a la lista de boletines
+
+    return render(request, 'core/crear_boletin.html')
