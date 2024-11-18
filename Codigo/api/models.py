@@ -10,6 +10,8 @@ class Boletin(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
+    archivo_pdf = models.FileField(upload_to = 'boletines/pdfs/', blank = True, null = True)
+    imagen = models.ImageField(upload_to = 'boletines/images/', blank = True, null = True)
 
 class TagBoletin(models.Model):
     boletin = models.ForeignKey(Boletin, on_delete=models.CASCADE)
@@ -18,3 +20,12 @@ class TagBoletin(models.Model):
 class BoletinFavoritos(models.Model):
     Boletin = models.ForeignKey(Boletin, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class Comentario(models.Model):
+    descripcion = models.TextField()
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class ComentarioBoletin(models.Model):
+    Boletin = models.ForeignKey(Boletin, on_delete=models.CASCADE)
+    comentario = models.ForeignKey(Comentario, on_delete=models.CASCADE)
