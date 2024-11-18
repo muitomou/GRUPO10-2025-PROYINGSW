@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Tag(models.Model):
+    tipo = models.CharField(max_length=100, null = True, blank = True)
     nombre = models.CharField(max_length=100, unique=True)
 
 class Boletin(models.Model):
@@ -12,10 +13,7 @@ class Boletin(models.Model):
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     archivo_pdf = models.FileField(upload_to = 'boletines/pdfs/', blank = True, null = True)
     imagen = models.ImageField(upload_to = 'boletines/images/', blank = True, null = True)
-
-class TagBoletin(models.Model):
-    boletin = models.ForeignKey(Boletin, on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    tag = models.ManyToManyField(Tag, related_name='boletines')
 
 class BoletinFavoritos(models.Model):
     Boletin = models.ForeignKey(Boletin, on_delete=models.CASCADE)
