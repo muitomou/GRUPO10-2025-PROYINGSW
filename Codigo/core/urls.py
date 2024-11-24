@@ -11,7 +11,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('adminView/', views.adminView, name='adminView'),
-
+    path('boletines/<int:id>/', views.boletin, name='boletin'),
 ]
 
 if settings.DEBUG:

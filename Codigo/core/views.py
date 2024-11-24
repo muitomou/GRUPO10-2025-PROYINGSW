@@ -1,5 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from api.models import Boletin
 
 # Create your views here.
@@ -24,6 +24,11 @@ def register(request):
 
 def adminView(request):
     return render(request, 'adminView.html')
+
+def boletin(request, id):
+    # Buscar el boletín por id
+    boletin = get_object_or_404(Boletin, id=id)
+    return render(request, 'boletin.html', {'boletin': boletin})
 
 
 

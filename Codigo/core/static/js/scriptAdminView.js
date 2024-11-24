@@ -1,6 +1,9 @@
 document.getElementById('subirBoletinForm').addEventListener('submit', async function(event) {
     event.preventDefault();  // Evita que el formulario se envíe de la manera tradicional
 
+    // Obtiene la URL base dinámicamente
+    const baseUrl = window.location.origin;
+
     // Crea un objeto FormData con los datos del formulario
     const formData = new FormData();
     formData.append('titulo', document.getElementById('titulo').value);
@@ -9,7 +12,7 @@ document.getElementById('subirBoletinForm').addEventListener('submit', async fun
     formData.append('imagen', document.getElementById('imagen').files[0]);
 
     try {
-        const response = await fetch('http://0.0.0.0:8000/api/boletines/', {
+        const response = await fetch('0.0.0.0:8000/api/boletines/', {
             method: 'POST',
             headers: {
                 // El CSRF token no es necesario en headers cuando usas FormData

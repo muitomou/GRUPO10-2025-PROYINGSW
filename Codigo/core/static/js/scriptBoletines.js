@@ -22,7 +22,7 @@ function mostrarBoletines(boletines) {
 
     boletines.forEach(boletin => {
         const card = document.createElement('a');
-        card.href = "#"; // Asegúrate de que el enlace sea adecuado
+        card.href = `/boletines/${boletin.id}/`;
         card.style.textDecoration = 'none';
 
         const cardBody = document.createElement('div');

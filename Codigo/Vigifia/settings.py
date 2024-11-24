@@ -133,3 +133,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configuración de archivos de medios
 MEDIA_URL = '/media/'  # URL base para acceder a los archivos de medios
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directorio donde se guardan los archivos
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
