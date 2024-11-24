@@ -11,47 +11,42 @@
             <p class="card-text"><small></small></p>
         </div>
   </div>
-    <form class="row p-2  pe-4 ps-4">
-        <h6>Filtrar Búsqueda:</h6>
-        <div class="col-md-4">
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Región</label>
-                <select class="form-select" id="inputGroupSelect01">
-                <option selected>Seleccione una región...</option>
-                <option value="1">Metropolitana</option>
-                <option value="2">Valparaiso</option>
-                <option value="3">Ñuble</option>
-                </select>
+    <div class="d-flex justify-content-center align-items-center">
+        <form class="row pt-4">
+            <div class="col-md-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                  </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Estación</label>
-                <select class="form-select" id="inputGroupSelect01">
-                <option selected>Seleccione una estación...</option>
-                <option value="1">Verano</option>
-                <option value="2">Otoño</option>
-                <option value="3">Invierno</option>
-                <option value="4">Primavera</option>
-                </select>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Región</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Seleccione una región...</option>
+                    <option value="1">Metropolitana</option>
+                    <option value="2">Valparaiso</option>
+                    <option value="3">Ñuble</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Evento</label>
-                <select class="form-select" id="inputGroupSelect01">
-                <option selected>Seleccione un evento...</option>
-                <option value="1">Incendio</option>
-                <option value="2">Sequía</option>
-                <option value="3">Inundación</option>
-                <option value="4">Heladas</option>
-                </select>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Seleccione categoria...</option>
+                    <option value="1">Incendio</option>
+                    <option value="2">Sequía</option>
+                    <option value="3">Inundación</option>
+                    <option value="4">Heladas</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="col-1">
-            <button class="btn btn-primary" type="submit">Buscar</button>
-        </div>
-    </form>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Aplicar filtros</button>
+            </div>
+        </form>
+    </div>
     <div class="container p-2">
         <div id="lista-boletines"></div>
     </div>

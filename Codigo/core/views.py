@@ -26,19 +26,6 @@ def adminView(request):
     return render(request, 'adminView.html')
 
 
-# ARREGLAR ******
-def crear_boletin(request):
-    if request.method == 'POST':
-        titulo = request.POST.get('titulo')
-        descripcion = request.POST.get('descripcion')
-        fecha_publicacion = request.POST.get('fecha_publicacion')
 
-        Boletin.objects.create(
-            titulo=titulo,
-            descripcion=descripcion,
-            fecha_publicacion=fecha_publicacion
-        )
 
-        return redirect('boletin')
 
-    return render(request, 'core/crear_boletin.html')
