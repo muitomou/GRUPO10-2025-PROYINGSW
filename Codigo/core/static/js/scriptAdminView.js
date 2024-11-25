@@ -12,7 +12,7 @@ document.getElementById('subirBoletinForm').addEventListener('submit', async fun
     formData.append('imagen', document.getElementById('imagen').files[0]);
 
     try {
-        const response = await fetch('localhost:8000/api/boletines/', {
+        const response = await fetch('http://localhost:8000/api/boletines/', {
             method: 'POST',
             headers: {
                 // El CSRF token no es necesario en headers cuando usas FormData

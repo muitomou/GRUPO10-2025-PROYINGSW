@@ -2,38 +2,26 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2 class="text-center mb-4">Subir Boletin</h2>
-            <form method="POST"n enctype="multipart/form-data" id="subirBoletinForm">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div class="mb-3">
-                    <label for="titulo" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" required>
-                </div>
-                <div class="">
-                    <label class="form-label">Descripcion</label>
-                    <textarea class="form-control" aria-label="With textarea" id="descripcion" name="descripcion"></textarea>
-                  </div>
-                  
-                
-                  <div class="input-group mb-3 pt-3">
-                    <label class="input-group-text" for="inputGroupFile01">Subir PDF</label>
-                    <input type="file" class="form-control" id="archivo_pdf">
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupFile01">Subir Imagen</label>
-                    <input type="file" class="form-control" id="imagen">
-                  </div>
-                  <button type="submit" class="btn btn-primary w-100 mt-2">Confirmar</button>
-            </form>
-            <div id="responseMessage"></div>
-        </div>
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <div class="card" style="width: 18rem; max-height: 550px; overflow:auto;">
+      <img src="/static/images/ejemplo_boletin.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nuevo Boletin</h5>
+        <p class="card-text">Crea Y Sube un nuevo Boletin a la plataforma.</p>
+        <a href="{% url 'crearBoletin' %}" class="btn btn-primary">Crear</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem; max-height: 550px; overflow: hidden;">
+      <img src="/static/images/etiqueta.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Manejo de etiquetas</h5>
+        <p class="card-text">Crea,elimia o edita etiquetas de los boletins para filtrar estos mismos</p>
+        <a href="{% url 'categorias' %}" class="btn btn-primary">Ir</a>
+      </div>
     </div>
   </div>
-  <script src="{% static 'js/scriptAdminView.js' %}"></script>
+</div>
+
+
 {% endblock %}

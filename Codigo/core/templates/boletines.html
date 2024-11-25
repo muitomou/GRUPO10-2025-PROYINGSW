@@ -10,43 +10,65 @@
             <p class="card-text"></p>
             <p class="card-text"><small></small></p>
         </div>
-  </div>
+    </div>
     <div class="d-flex justify-content-center align-items-center">
-        <form class="row pt-4">
+        <form class="row pt-4" method="GET" action=".">
+            <!-- Filtro de búsqueda -->
             <div class="col-md-4">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
-                  </div>
+                    <input type="text" class="form-control" placeholder="Buscar boletín" name="search" aria-label="Buscar boletín">
+                    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                </div>
             </div>
+
+            <!-- Filtro de región -->
             <div class="col-md-3">
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupSelect01">Región</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Seleccione una región...</option>
-                    <option value="1">Metropolitana</option>
-                    <option value="2">Valparaiso</option>
-                    <option value="3">Ñuble</option>
+                    <label class="input-group-text" for="regionSelect">Región</label>
+                    <select class="form-select" id="regionSelect" name="region">
+                        <option value="">Seleccione una región...</option>
+                        {% for region in regiones %}
+                        <option value="{{ region.id }}">{{ region.nombre }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
+
+            <!-- Filtro de categoría -->
             <div class="col-md-3">
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Seleccione categoria...</option>
-                    <option value="1">Incendio</option>
-                    <option value="2">Sequía</option>
-                    <option value="3">Inundación</option>
-                    <option value="4">Heladas</option>
+                    <label class="input-group-text" for="categoriaSelect">Categoría</label>
+                    <select class="form-select" id="categoriaSelect" name="categoria">
+                        <option value="">Seleccione una categoría...</option>
+                        {% for categoria in categorias %}
+                        <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
+
+            <!-- Botón de aplicar filtros -->
             <div class="col-2">
                 <button class="btn btn-primary" type="submit">Aplicar filtros</button>
             </div>
         </form>
     </div>
+
+    <!-- Lista de boletines -->
+    <div class="container p-2">
+        <div id="lista-boletines">
+            {% for boletin in boletines %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ boletin.titulo }}</h5>
+                    <p class="card-text">{{ boletin.descripcion }}</p>
+                    <p class="card-text"><small class="text-muted">Región: {{ boletin.region.nombre }} | Categoría: {{ boletin.categoria.nombre }}</small></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
     <div class="container p-2">
         <div id="lista-boletines"></div>
     </div>

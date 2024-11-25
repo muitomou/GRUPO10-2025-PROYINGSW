@@ -12,6 +12,9 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('adminView/', views.adminView, name='adminView'),
     path('boletines/<int:id>/', views.boletin, name='boletin'),
+    path('crearBoletin/', views.nuevo_boletin, name='crearBoletin'),
+    path('categorias/', views.categorias, name='categorias')
+    
 ]
 
 if settings.DEBUG:
