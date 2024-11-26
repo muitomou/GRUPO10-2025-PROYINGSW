@@ -49,7 +49,8 @@ function cargarCategorias() {
         });
 }
 
-window.onload = function() {
+
+document.addEventListener('DOMContentLoaded', function() {
     cargarRegiones();
     cargarCategorias();
-};
+});

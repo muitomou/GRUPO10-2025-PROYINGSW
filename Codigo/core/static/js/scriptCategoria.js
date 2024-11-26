@@ -7,7 +7,7 @@ function loadCategorias() {
             return response.json();
         })
         .then(data => {
-            const categoriaSelect = document.getElementById('categoriaSelect');
+            const categoriaSelect = document.getElementById('lista-categorias');
             if (!categoriaSelect) {
                 console.error("Elemento 'categoriaSelect' no encontrado en el DOM.");
                 return;
