@@ -20,4 +20,4 @@ class BoletinSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Boletin
-        fields = ['titulo', 'descripcion', 'archivo_pdf', 'imagen', 'categorias', 'regiones']
+        fields = ['id', 'titulo', 'descripcion', 'archivo_pdf', 'imagen', 'categorias', 'regiones']

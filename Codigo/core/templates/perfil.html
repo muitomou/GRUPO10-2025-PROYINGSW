@@ -3,90 +3,76 @@
 
 {% block content %}
 <div class="container">
-<div class="panel-body inf-content">
-    <div class="row pt-5">
-        <div class="col-md-2">
-            <img alt=""  title="" class="rounded-circle img-thumbnail" src="https://yt3.googleusercontent.com/ZhWPQIkvcnEzXzHwQXunjN8zcetOu1B1O1f7Ng3cDhYUnExJajwowR86o-F_bmqPTNVqL24bXA=s160-c-k-c0x00ffffff-no-rj" data-original-title="Usuario"> 
-        </div>
-        <div class="col-md-8">
-            <strong>Informacion de Usuario</strong><br>
-            <div class="table-responsive">
-            <table class="table table-user-information">
-                <tbody>
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
-                                Identificacion                                                
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            123456789     
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-user  text-primary"></span>    
-                                Nombre                                               
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            Mauro    
-                        </td>
-                    </tr>
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-cloud text-primary"></span>  
-                                Apellido                                                
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            Castillo   
-                        </td>
-                    </tr>
+    <div class="panel-body inf-content">
+        <div class="row pt-5">
+            <div class="col-md-8">
+                <strong>Información de Usuario</strong><br>
+                <div class="table-responsive">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>    
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-user text-primary"></span>    
+                                        Nombre                                               
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ user.first_name }}  
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                        Apellido                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ user.last_name }}   
+                                </td>
+                            </tr>
 
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-bookmark text-primary"></span> 
-                                Usuario                                             
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            slowmou
-                        </td>
-                    </tr>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                        Usuario                                             
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ user.username }}
+                                </td>
+                            </tr>
 
-
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-eye-open text-primary"></span> 
-                                Role                                                
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            Admin
-                        </td>
-                    </tr>
-                    <tr>        
-                        <td>
-                            <strong>
-                                <span class="glyphicon glyphicon-envelope text-primary"></span> 
-                                Email                                                
-                            </strong>
-                        </td>
-                        <td class="text-primary">
-                            mauro@castillo.cl
-                        </td>
-                    </tr>                                   
-                </tbody>
-            </table>
+                            <tr>        
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                                        Email                                                
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{ user.email }}
+                                </td>
+                            </tr>                                   
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <!-- Formulario para editar información -->
+                <h4>Editar Perfil</h4>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger mt-3">Cerrar Sesión</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
-</div>                                        
+</div>                                         
 {% endblock %}
