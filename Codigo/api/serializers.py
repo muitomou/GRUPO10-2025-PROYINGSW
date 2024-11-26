@@ -15,9 +15,9 @@ class RegionSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombre']  # Ajusta los campos que necesites
 
 class BoletinSerializer(serializers.ModelSerializer):
-    categorias = CategoriaSerializer(many=True)
-    regiones = RegionSerializer(many=True)
-
+    categorias = serializers.PrimaryKeyRelatedField(queryset=Categoria.objects.all(), many=True)
+    regiones = serializers.PrimaryKeyRelatedField(queryset=Region.objects.all(), many=True)
+    
     class Meta:
         model = Boletin
-        fields = ['id', 'titulo', 'descripcion', 'archivo_pdf', 'imagen', 'categorias', 'regiones']
+        fields = ['titulo', 'descripcion', 'archivo_pdf', 'imagen', 'categorias', 'regiones']

@@ -1,5 +1,6 @@
 // Hacer la petición a la API para obtener los boletines
 function obtenerBoletines() {
+    console.log("OBTENIENDO BOLETINES")
     fetch('/api/boletines/') // No es necesario agregar "api" si ya está configurado en el router
         .then(response => {
             if (!response.ok) {
@@ -17,6 +18,7 @@ function obtenerBoletines() {
 
 // Función para mostrar los boletines en la vista
 function mostrarBoletines(boletines) {
+    console.log("MOSTRANDO BOLETINES")
     const listaBoletines = document.getElementById('lista-boletines');
     listaBoletines.innerHTML = ''; // Limpiar la lista actual
 
@@ -131,7 +133,5 @@ function cargarCategorias() {
 
 // Llamar a las funciones para cargar datos en los select
 window.onload = function() {
-    cargarRegiones();
-    cargarCategorias();
     obtenerBoletines(); // Ya definida para los boletines
 };

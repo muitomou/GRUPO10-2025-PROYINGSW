@@ -27,9 +27,7 @@
                     <label class="input-group-text" for="regionSelect">Región</label>
                     <select class="form-select" id="regionSelect" name="region">
                         <option value="">Seleccione una región...</option>
-                        {% for region in regiones %}
-                        <option value="{{ region.id }}">{{ region.nombre }}</option>
-                        {% endfor %}
+
                     </select>
                 </div>
             </div>
@@ -39,10 +37,7 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="categoriaSelect">Categoría</label>
                     <select class="form-select" id="categoriaSelect" name="categoria">
-                        <option value="">Seleccione una categoría...</option>
-                        {% for categoria in categorias %}
-                        <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
-                        {% endfor %}
+                        <option value="">Seleccione una Categoría...</option>
                     </select>
                 </div>
             </div>
@@ -57,21 +52,10 @@
     <!-- Lista de boletines -->
     <div class="container p-2">
         <div id="lista-boletines">
-            {% for boletin in boletines %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ boletin.titulo }}</h5>
-                    <p class="card-text">{{ boletin.descripcion }}</p>
-                    <p class="card-text"><small class="text-muted">Región: {{ boletin.region.nombre }} | Categoría: {{ boletin.categoria.nombre }}</small></p>
-                </div>
-            </div>
-            {% endfor %}
+
         </div>
     </div>
 
-    <div class="container p-2">
-        <div id="lista-boletines"></div>
-    </div>
-
     <script src="{% static 'js/scriptBoletines.js' %}"></script>
+    <script src="{% static 'js/scriptCargar.js' %}"></script>
 {% endblock %}

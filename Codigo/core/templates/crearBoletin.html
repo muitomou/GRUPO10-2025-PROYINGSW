@@ -34,7 +34,7 @@
                 <!-- Selección de Regiones -->
                 <div class="mb-3">
                     <label for="regiones" class="form-label">Seleccionar Regiones</label>
-                    <select class="form-select" id="lista-categorias" name="regiones" multiple>
+                    <select class="form-select" id="regionSelect" name="regiones" multiple>
                         
                     </select>
                     <small class="text-muted">Mantén presionada la tecla Ctrl (o Cmd en Mac) para seleccionar múltiples regiones.</small>
@@ -44,7 +44,7 @@
                 <div class="mb-3">
                     <label for="categorias" class="form-label">Seleccionar Categorías</label>
                     <select class="form-select" id="categoriaSelect" name="categoria" multiple>
-                        <option value="">Seleccione una categoría...</option>
+
                     </select>
                     <small class="text-muted">Mantén presionada la tecla Ctrl (o Cmd en Mac) para seleccionar múltiples categorías.</small>
                 </div>
@@ -56,5 +56,5 @@
     </div>
   </div>
   <script src="{% static 'js/scriptAdminView.js' %}"></script>
-  <script src="{% static 'js/scriptCategoria.js' %}"></script>
+  <script src="{% static 'js/scriptCargar.js' %}"></script>
 {% endblock %}
