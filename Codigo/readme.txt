@@ -1,8 +1,11 @@
 En primera instancia ejecute:
-    docker-compose build
+* docker-compose build
+* docker compose up
+* docker compose run web python manage.py makemigrations
+* docker compose run web python manage.py makemigrations
 
 Para iniciar el codigo se debe utilizar el comando:
-    docker compose up
+* docker compose up
 
 La pagina esta en localhost:8000 o 0.0.0.0:8000
 pgAdmin (admin base de datos) localhost:80 o 0.0.0.0:80
