@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from rest_framework import generics
-from .models import Boletin, Region, Boletin
+from .models import Boletin, Region
 from .serializers import BoletinSerializer, RegionSerializer, BoletinSerializer
 
 class BoletinListView(generics.ListAPIView):

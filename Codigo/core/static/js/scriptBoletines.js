@@ -58,12 +58,22 @@ function mostrarBoletines(boletines) {
         descripcion.textContent = boletin.descripcion; // Descripción del boletín
         
         const fecha = document.createElement('small');
-        fecha.classList.add('text-body-secondary');
+        fecha.classList.add('text-body-1');
         fecha.textContent = boletin.fecha_publicacion; // Fecha de publicación
+
+        const region = document.createElement('small');
+        region.classList.add('text-body-2');
+        region.textContent = boletin.regiones; // Fecha de publicación
+
+        const categoria = document.createElement('small');
+        categoria.classList.add('text-body-3');
+        categoria.textContent = boletin.categorias; // Fecha de publicación
         
         cardBodyInner.appendChild(titulo);
         cardBodyInner.appendChild(descripcion);
         cardBodyInner.appendChild(fecha);
+        cardBodyInner.appendChild(region);
+        cardBodyInner.appendChild(categoria);
 
         
         colDetalle.appendChild(cardBodyInner);

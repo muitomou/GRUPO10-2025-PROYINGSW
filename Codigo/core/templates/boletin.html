@@ -7,6 +7,23 @@
         <p><strong>Autor:</strong> Fundación para la Innovación Agraria, Unidad Plataforma de Innovación / Santiago, Chile</p>
         <p><strong>Fecha:</strong> 26-sep-2024</p>
 
+        <!-- Mostrar las categorías -->
+        <p><strong>Categorías:</strong> 
+            {% for categoria in boletin.categorias.all %}
+                <span class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                    {{ categoria.nombre }}
+                </span>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        
+
+        <p><strong>Regiones:</strong> 
+            {% for region in boletin.regiones.all %}
+                {{ region.nombre }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        
+
         <div class="row mt-4">
             <div class="col-md-4">
                 <img src="{{ boletin.imagen.url }}" alt="Portada del boletín" class="img-fluid rounded">
@@ -20,5 +37,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/scriptCargar.js' %}"></script>
+    <script src="{% static 'js/scriptBoletines.js' %}"></script>
 
 {% endblock %}
