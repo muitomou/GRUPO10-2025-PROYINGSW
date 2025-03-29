@@ -6,7 +6,7 @@ Este es el repositorio del **Grupo 10**, cuyos integrantes son:
 * Tomás González - 202273609-7
 * Benjamin Urrutia - 202273580-5
 * Mauro Castillo - 202273627-5
-* **Tutor**: Igancio Quintana
+* **Tutor**: Ignacio Quintana
 
 Se va a continuar con el mismo proyecto desarrollado el periodo 2024-2, donde los integrantes serán los mismos para este periodo 2025-1
 
