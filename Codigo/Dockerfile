@@ -1,11 +1,26 @@
-FROM python
-ENV PYTHONUNBUFFERED = 1
+FROM python:3.13.0-alpine3.20
 
-WORKDIR /code
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
 
-COPY requirements.txt /code/
+# Instala dependencias de compilación necesarias para Alpine
+RUN apk add --no-cache --virtual .build-deps \
+    gcc \
+    musl-dev \
+    python3-dev \
+    libffi-dev \
+    openssl-dev \
+    jpeg-dev \
+    zlib-dev \
+    && pip install --no-cache-dir --upgrade pip
 
-RUN python -m pip install --upgrade pip
-RUN python -m pip install -r requirements.txt
+WORKDIR /backend
+COPY ./requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /code/
+# Limpia dependencias de compilación
+RUN apk del .build-deps
+
+COPY ./backend .
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
