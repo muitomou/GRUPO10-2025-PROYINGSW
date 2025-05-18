@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import bannerImage from '../images/banner-inicio.jpeg';
 import boletinesImage from '../images/boletines.jpg';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation('home');
   return (
     <div className="home-container">
       {/* Banner con imagen de fondo */}
@@ -19,7 +21,7 @@ const Home = () => {
             className="card-title fs-1" 
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
           >
-            Vigilancia e Inteligencia en Innovación
+            {t('title')}
           </h5>
           <p className="card-text"></p>
           <p 
@@ -27,7 +29,7 @@ const Home = () => {
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}
           >
             <small>
-              Es un espacio que entrega información resultante del proceso de vigilancia, que realiza FIA, con la finalidad de aportar al conocimiento y toma de decisiones de los distintos actores de la cadena agroalimentaria y forestal. Aquí encontrarás información en formato o del tipo Boletines, Panoramas y Estudios, los que contienen distintos tipos de información tales como; noticias, publicaciones científicas, patentes, proyectos, políticas públicas, entre otras.
+              {t('description')}
             </small>
           </p>
         </div>
@@ -46,7 +48,7 @@ const Home = () => {
                   style={{ objectFit: 'cover', maxHeight: '30vh' }} 
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Boletines de Vigilancia e Inteligencia en Innovación</h5>
+                  <h5 className="card-title">{t('boletin-btn')}</h5>
                 </div>
               </div>
             </Link>

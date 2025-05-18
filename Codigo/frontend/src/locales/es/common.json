@@ -1,0 +1,15 @@
+{
+    "name": "Nombre",
+    "lastname": "Apellido",
+    "user": "Nombre de usuario",
+    "email": "Correo electronico",
+    "password": "Contraseña",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "error_generic": "Algo salió mal. Intenta nuevamente.",
+    "save": "Guardar",
+    "search": "Buscar"
+  }

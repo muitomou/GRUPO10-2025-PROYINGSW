@@ -3,11 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import fiaLogo from "../images/channels-501_logo_fia_gob.svg";
 import axios from "axios";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const { t: tNavbar } = useTranslation('navbar');
+  const { t: tCommon } = useTranslation('common');
 
   // Función para verificar autenticación y obtener datos del usuario
   const checkAuth = async () => {
@@ -97,8 +100,8 @@ const Navbar = () => {
         
         <div className="collapse navbar-collapse" id="navbarContent">
           <div className="navbar-nav me-auto">
-            <Link className="nav-link" to="/">Inicio</Link>
-            <Link className="nav-link" to="/boletines">Boletines</Link>
+            <Link className="nav-link" to="/">{tNavbar('home')}</Link>
+            <Link className="nav-link" to="/boletines">{tNavbar('boletines')}</Link>
             
             {/* Mostrar enlace a Admin solo para usuarios con rol admin */}
             {isAuthenticated && user?.role === 'admin' && (
@@ -127,7 +130,7 @@ const Navbar = () => {
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                   <li>
                     <Link className="dropdown-item" to="/perfil">
-                      <i className="bi bi-person me-2"></i>Mi perfil
+                      <i className="bi bi-person me-2"></i>{t('profile')}
                     </Link>
                   </li>
                   
@@ -146,7 +149,7 @@ const Navbar = () => {
                       className="dropdown-item text-danger" 
                       onClick={handleLogout}
                     >
-                      <i className="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+                      <i className="bi bi-box-arrow-right me-2"></i>{t('logout')}
                     </button>
                   </li>
                 </ul>
@@ -154,10 +157,10 @@ const Navbar = () => {
             ) : (
               <div className="d-flex">
                 <Link className="btn btn-outline-primary me-2" to="/login">
-                  Iniciar sesión
+                {tCommon('login')}
                 </Link>
                 <Link className="btn btn-primary" to="/signup">
-                  Registrarse
+                {tCommon('register')}
                 </Link>
               </div>
             )}

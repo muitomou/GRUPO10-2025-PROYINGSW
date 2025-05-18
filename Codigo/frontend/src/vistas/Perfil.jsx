@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Perfil = () => {
+  const { t: tProfile } = useTranslation('profile');
+  const { t: tCommon } = useTranslation('common');
   const [user, setUser] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
@@ -103,24 +106,24 @@ const Perfil = () => {
       <div className="panel-body inf-content">
         <div className="row">
           <div className="col-md-8 mx-auto card p-4">
-            <h3 className="mb-4">Información de Usuario</h3>
+            <h3 className="mb-4">{tProfile('title')}</h3>
             <div className="table-responsive">
               <table className="table table-user-information">
                 <tbody>
                   <tr>
-                    <td width="30%"><strong>Nombre</strong></td>
+                    <td width="30%"><strong>{tCommon('name')}</strong></td>
                     <td>{user.first_name}</td>
                   </tr>
                   <tr>
-                    <td><strong>Apellido</strong></td>
+                    <td><strong>{tCommon('lastname')}</strong></td>
                     <td>{user.last_name}</td>
                   </tr>
                   <tr>
-                    <td><strong>Usuario</strong></td>
+                    <td><strong>{tCommon('user')}</strong></td>
                     <td>{user.username}</td>
                   </tr>
                   <tr>
-                    <td><strong>Email</strong></td>
+                    <td><strong>{tCommon('email')}</strong></td>
                     <td>{user.email}</td>
                   </tr>
                 </tbody>
@@ -131,11 +134,11 @@ const Perfil = () => {
 
             {editMode ? (
               <>
-                <h4 className="mt-4">Editar Perfil</h4>
+                <h4 className="mt-4">{tProfile('edit-title')}</h4>
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label htmlFor="first_name" className="form-label">
-                      Nombre
+                    {tCommon('name')}
                     </label>
                     <input
                       type="text"
@@ -149,7 +152,7 @@ const Perfil = () => {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="last_name" className="form-label">
-                      Apellido
+                    {tCommon('lastname')}
                     </label>
                     <input
                       type="text"
@@ -163,7 +166,7 @@ const Perfil = () => {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="email" className="form-label">
-                      Email
+                    {tCommon('email')}
                     </label>
                     <input
                       type="email"
@@ -178,14 +181,14 @@ const Perfil = () => {
                   </div>
                   <div className="d-flex gap-2 mt-3">
                     <button type="submit" className="btn btn-primary flex-grow-1">
-                      Guardar Cambios
+                    {tCommon('save')}
                     </button>
                     <button
                       type="button"
                       className="btn btn-outline-secondary flex-grow-1"
                       onClick={() => setEditMode(false)}
                     >
-                      Cancelar
+                      {tCommon('cancel')}
                     </button>
                   </div>
                 </form>
@@ -196,13 +199,13 @@ const Perfil = () => {
                   onClick={() => setEditMode(true)}
                   className="btn btn-primary flex-grow-1"
                 >
-                  Editar Perfil
+                  {tProfile('edit-btn')}
                 </button>
                 <button
                   onClick={handleLogout}
                   className="btn btn-outline-danger flex-grow-1"
                 >
-                  Cerrar Sesión
+                  {tCommon('logout')}
                 </button>
               </div>
             )}
