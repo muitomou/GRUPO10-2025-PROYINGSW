@@ -11,5 +11,7 @@
     "cancel": "Cancel",
     "error_generic": "Algo salió mal. Intenta nuevamente.",
     "save": "Save",
-    "search": "Search"
+    "search": "Search",
+    "english": "English",
+    "spanish": "Spanish"
   }

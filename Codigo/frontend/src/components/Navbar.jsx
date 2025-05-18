@@ -4,6 +4,7 @@ import fiaLogo from "../images/channels-501_logo_fia_gob.svg";
 import axios from "axios";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useTranslation } from 'react-i18next';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -11,6 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { t: tNavbar } = useTranslation('navbar');
   const { t: tCommon } = useTranslation('common');
+  const { i18n } = useTranslation();
 
   // Función para verificar autenticación y obtener datos del usuario
   const checkAuth = async () => {
@@ -113,6 +115,7 @@ const Navbar = () => {
             )}
           </div>
           
+          
           <div className="d-flex align-items-center">
             {isAuthenticated ? (
               <div className="dropdown">
@@ -166,7 +169,30 @@ const Navbar = () => {
             )}
           </div>
         </div>
+        <div className="dropdown ms-5">
+              <button 
+                className="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+                id="userDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <LanguageIcon />
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                  <button className="dropdown-item" onClick={() => i18n.changeLanguage('en')}>
+                    🇺🇸 {tCommon('english')}
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" onClick={() => i18n.changeLanguage('es')}>
+                    🇪🇸 {tCommon('spanish')}
+                  </button>
+                </li>
+              </ul>
+            </div>
       </div>
+      
     </nav>
   );
 };
