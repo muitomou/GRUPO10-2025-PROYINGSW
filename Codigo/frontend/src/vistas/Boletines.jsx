@@ -4,8 +4,11 @@ import axios from 'axios';
 import bannerImage from '../images/banner-boletines.jpg';
 import BoletinCard from '../components/BoletinCard'; // Asumo que tienes este componente
 import regiones from '../data/regiones.json';
+import { useTranslation } from 'react-i18next';
 
 const Boletines = () => {
+  const { t: tBoletines } = useTranslation('boletines');
+  const { t: tCommon } = useTranslation('common');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -96,7 +99,7 @@ const Boletines = () => {
             className="card-title fs-1 text-center" 
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
           >
-            Boletines de Vigilancia e Inteligencia en Innovación
+            {tBoletines('title')}
           </h5>
         </div>
       </div>
@@ -111,7 +114,7 @@ const Boletines = () => {
                 <input 
                   type="text" 
                   className="form-control" 
-                  placeholder="Buscar boletín por título o descripción" 
+                  placeholder={tBoletines('search')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   aria-label="Buscar boletín"
@@ -142,14 +145,14 @@ const Boletines = () => {
             {/* Filtro de categoría */}
             <div className="col-md-3">
               <div className="input-group">
-                <label className="input-group-text" htmlFor="categoriaSelect">Categoría</label>
+                <label className="input-group-text" htmlFor="categoriaSelect">{tBoletines('categories')}</label>
                 <select 
                   className="form-select" 
                   id="categoriaSelect" 
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
-                  <option value="">Todas las categorías</option>
+                  <option value="">{tBoletines('all-categories')}</option>
                   {categorias.map((categoria) => (
                     <option key={categoria.id} value={categoria.id}>
                       {categoria.nombre}
@@ -162,14 +165,14 @@ const Boletines = () => {
             {/* Botones de acción */}
             <div className="col-md-2 d-flex gap-2">
               <button className="btn btn-primary flex-grow-1" type="submit">
-                {loading ? 'Buscando...' : 'Buscar'}
+                {loading ? 'Buscando...' : tCommon('search')}
               </button>
               <button 
                 className="btn btn-outline-secondary" 
                 type="button"
                 onClick={resetFilters}
               >
-                Limpiar
+                {tBoletines('clean-filters')}
               </button>
             </div>
           </div>
@@ -193,7 +196,7 @@ const Boletines = () => {
           </div>
         ) : boletines.length === 0 ? (
           <div className="alert alert-info mt-4" role="alert">
-            No se encontraron boletines con los filtros seleccionados
+            {tBoletines('not-found')}
           </div>
         ) : (
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

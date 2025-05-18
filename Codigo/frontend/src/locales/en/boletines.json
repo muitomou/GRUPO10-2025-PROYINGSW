@@ -3,5 +3,6 @@
     "search": "Search news by title or description",
     "clean-filters": "clean",
     "categories": "Categories",
-    "all-categories": "All categories"
+    "all-categories": "All categories",
+    "not-found": "Not found"
 }

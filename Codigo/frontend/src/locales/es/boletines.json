@@ -3,5 +3,6 @@
     "search": "Buscar boletín por título o descripción",
     "clean-filters": "Limpiar",
     "categories": "Categoría",
-    "all-categories": "Todas las categorías"
+    "all-categories": "Todas las categorías",
+    "not-found": "No se encontraron boletines con los filtros seleccionados."
 }

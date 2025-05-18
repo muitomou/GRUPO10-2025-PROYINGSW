@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../components/auth'; // Importamos la función de login centralizada
+import { useTranslation } from 'react-i18next';
 
 export default function Signin() {
+    const { t: tAuth } = useTranslation('auth');
+    const { t: tCommon } = useTranslation('common');
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -47,7 +50,7 @@ export default function Signin() {
                 <div className="col-md-6 col-lg-4">
                     <div className="card shadow">
                         <div className="card-body p-4">
-                            <h2 className="text-center mb-4">Inicio de Sesión</h2>
+                            <h2 className="text-center mb-4">{tCommon('login')}</h2>
                             
                             {error && (
                                 <div className="alert alert-danger" role="alert">
@@ -58,14 +61,14 @@ export default function Signin() {
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <label htmlFor="username" className="form-label">
-                                        Nombre de usuario
+                                    {tCommon('user')}
                                     </label>
                                     <input
                                         type="text"
                                         className="form-control"
                                         id="username"
                                         name="username"
-                                        placeholder="Ingresa tu usuario"
+                                        placeholder={tAuth('enter-username')}
                                         value={formData.username}
                                         onChange={handleChange}
                                         required
@@ -74,14 +77,14 @@ export default function Signin() {
 
                                 <div className="mb-4">
                                     <label htmlFor="password" className="form-label">
-                                        Contraseña
+                                    {tCommon('password')}
                                     </label>
                                     <input
                                         type="password"
                                         className="form-control"
                                         id="password"
                                         name="password"
-                                        placeholder="Ingresa tu contraseña"
+                                        placeholder={tAuth('enter-password')}
                                         value={formData.password}
                                         onChange={handleChange}
                                         required
@@ -98,15 +101,15 @@ export default function Signin() {
                                             <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
                                             Iniciando sesión...
                                         </>
-                                    ) : 'Iniciar Sesión'}
+                                    ) : tCommon('login')}
                                 </button>
                             </form>
 
                             <div className="text-center mt-3">
                                 <p className="mb-0">
-                                    ¿No tienes una cuenta?{' '}
+                                {tAuth('register-text')}{' '}
                                     <Link to="/signup" className="text-primary">
-                                        Regístrate aquí
+                                    {tAuth('register-link')}
                                     </Link>
                                 </p>
                             </div>
