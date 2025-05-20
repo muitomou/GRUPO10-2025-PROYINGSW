@@ -1,5 +1,10 @@
 {
     "home": "Inicio",
     "boletines": "Boletines",
-    "profile": "Mi perfil"
+    "profile": "Mi perfil",
+    "admin-panel": "Panel de administración",
+    "editor-panel": "Panel de edición",
+    "viewer": "Lector",
+    "editor": "Editor",
+    "admin": "Administrador"
 }

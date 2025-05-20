@@ -1,0 +1,21 @@
+{
+    "administration-panel": "Panel de administración",
+    "user-management": "Administrar usuarios",
+    "user-management-description": "Administrar usuarios del sistema",
+    "create-user-btn": "Crear nuevo usuario",
+    "edit-user-btn": "Editar usuario",
+    "editor-panel": "Panel de editor",
+    "bulletin-management": "Boletines",
+    "bulletin-management-description": "Administrar boletines",
+    "new-bulletin": "Nuevo boletin",
+    "categories-management": "Categorías",
+    "categories-management-description": "Administrar categorías",
+    "new-category": "Nueva categoría",
+    "region-management": "Regiones",
+    "region-management-description": "Administrar regiones",
+    "new-region": "Nueva región",
+    "tag-management": "Etiquetas",
+    "tag-management-description": "Administrar etiquetas",
+    "new-tag": "Nueva etiqueta",
+    "see-all-btn": "Ver todos"
+}

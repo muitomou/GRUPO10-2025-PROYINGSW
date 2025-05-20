@@ -1,0 +1,21 @@
+{
+    "administration-panel": "Administration Panel",
+    "user-management": "User Management",
+    "user-management-description": "Manage all system users",
+    "create-user-btn": "Create a new user",
+    "edit-user-btn": "Edit user",
+    "editor-panel": "Editor Panel",
+    "bulletin-management": "Bulletin Management",
+    "bulletin-management-description": "Manage all bulletins",
+    "new-bulletin": "New bulletin",
+    "categories-management": "Categories Management",
+    "categories-management-description": "Manage all categories",
+    "new-category": "New category",
+    "region-management": "Region Management",
+    "region-management-description": "Manage all regions",
+    "new-region": "New region",
+    "tag-management": "Tag Management",
+    "tag-management-description": "Manage all tags",
+    "new-tag": "New tag",
+    "see-all-btn": "See All"
+}

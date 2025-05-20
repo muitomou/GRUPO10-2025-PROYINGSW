@@ -10,6 +10,7 @@ import footerES from './locales/es/footer.json';
 import homeES from './locales/es/home.json';
 import navbarES from './locales/es/navbar.json';
 import profileES from './locales/es/profile.json';
+import adminES from './locales/es/admin.json';
 
 // Traducciones en inglés
 import authEN from './locales/en/auth.json';
@@ -18,7 +19,8 @@ import commonEN from './locales/en/common.json';
 import footerEN from './locales/en/footer.json';
 import homeEN from './locales/en/home.json';
 import navbarEN from './locales/en/navbar.json';
-import profileEN from './locales/en/profile.json';
+import profileEN from './locales/es/profile.json';
+import adminEN from './locales/en/admin.json';
 
 i18n
   .use(LanguageDetector) // Detecta idioma del navegador
@@ -33,6 +35,7 @@ i18n
         home: homeES,
         navbar: navbarES,
         profile: profileES,
+        admin: adminES,
       },
       en: {
         auth: authEN,
@@ -42,11 +45,12 @@ i18n
         home: homeEN,
         navbar: navbarEN,
         profile: profileEN,
+        admin: adminEN,
       },
     },
     fallbackLng: 'es', // Idioma por defecto si no se detecta
     debug: false,
-    ns: ['common', 'auth', 'boletines', 'footer', 'home', 'navbar', 'profile'],
+    ns: ['common', 'auth', 'boletines', 'footer', 'home', 'navbar', 'profile', 'admin'],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false,

@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import Editor from "./Editor"
+import { useTranslation } from 'react-i18next';
 
 const AdminDashboard = () => {
+  const { t: tAdmin } = useTranslation('admin');
+  const { t: tCommon } = useTranslation('common');
   return (
     <Container className="mt-5">
-      <h1 className="text-center mb-4">Panel de Administración</h1>
+      <h1 className="text-center mb-4">{tAdmin('administration-panel')}</h1>
       <Row className="justify-content-center g-4">
         {/* Gestión de Usuarios */}
         <Col md={6} lg={4}>
@@ -17,9 +20,9 @@ const AdminDashboard = () => {
               style={{ height: '200px', objectFit: 'cover' }}
             />
             <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-center">Gestión de Usuarios</Card.Title>
+              <Card.Title className="text-center">{tAdmin('user-management')}</Card.Title>
               <Card.Text className="text-center">
-                Administra todos los usuarios del sistema
+              {tAdmin('user-management-description')}
               </Card.Text>
               <div className="mt-auto d-grid gap-2">
                 <Button 
@@ -27,14 +30,14 @@ const AdminDashboard = () => {
                   to="/admin/create-user" 
                   variant="primary"
                 >
-                  Crear Nuevo Usuario
+                  {tAdmin('create-user-btn')}
                 </Button>
-                <Button 
+                <Button className="disabled"
                   as={Link} 
                   to="/admin/edit-user" 
                   variant="outline-primary"
                 >
-                  Editar Usuario
+                  {tAdmin('edit-user-btn')}
                 </Button>
               </div>
             </Card.Body>

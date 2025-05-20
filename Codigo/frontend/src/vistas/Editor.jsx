@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const EditorDashboard = () => {
+  const { t: tAdmin } = useTranslation('admin');
+  const { t: tCommon } = useTranslation('common');
   return (
     <Container className="mt-5">
-      <h1 className="text-center mb-4">Panel de Editor</h1>
+      <h1 className="text-center mb-4">{tAdmin('editor-panel')}</h1>
       <Row className="justify-content-center g-4">
         {/* Gestión de Boletines */}
         <Col md={6} lg={4}>
@@ -16,9 +19,9 @@ const EditorDashboard = () => {
               style={{ height: '200px', objectFit: 'cover' }}
             />
             <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-center">Gestión de Boletines</Card.Title>
+              <Card.Title className="text-center">{tAdmin('bulletin-management')}</Card.Title>
               <Card.Text className="text-center">
-                Administra todos los boletines del sistema
+              {tAdmin('bulletin-management-description')}
               </Card.Text>
               <div className="mt-auto d-grid gap-2">
                 <Button 
@@ -26,14 +29,14 @@ const EditorDashboard = () => {
                   to="/editar/boletines/nuevo" 
                   variant="primary"
                 >
-                  Crear Nuevo Boletín
+                  {tAdmin('new-bulletin')}
                 </Button>
                 <Button 
                   as={Link} 
                   to="/editar/boletines" 
                   variant="outline-primary"
                 >
-                  Ver Todos los Boletines
+                  {tAdmin('see-all-btn')}
                 </Button>
               </div>
             </Card.Body>
@@ -49,9 +52,9 @@ const EditorDashboard = () => {
               style={{ height: '200px', objectFit: 'cover' }}
             />
             <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-center">Gestión de Categorías</Card.Title>
+              <Card.Title className="text-center">{tAdmin('categories-management')}</Card.Title>
               <Card.Text className="text-center">
-                Administra las categorías para clasificar boletines
+              {tAdmin('categories-management-description')}
               </Card.Text>
               <div className="mt-auto d-grid gap-2">
                 <Button 
@@ -59,14 +62,14 @@ const EditorDashboard = () => {
                   to="/editar/categorias/nueva" 
                   variant="primary"
                 >
-                  Nueva Categoría
+                  {tAdmin('new-category')}
                 </Button>
                 <Button 
                   as={Link} 
                   to="/editar/categorias" 
                   variant="outline-primary"
                 >
-                  Ver Todas las Categorías
+                  {tAdmin('see-all-btn')}
                 </Button>
               </div>
             </Card.Body>
@@ -82,9 +85,9 @@ const EditorDashboard = () => {
               style={{ height: '200px', objectFit: 'cover' }}
             />
             <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-center">Gestión de Regiones</Card.Title>
+              <Card.Title className="text-center">{tAdmin('region-management')}</Card.Title>
               <Card.Text className="text-center">
-                Administra las regiones disponibles
+              {tAdmin('region-management-description')}
               </Card.Text>
               <div className="mt-auto d-grid gap-2">
                 <Button 
@@ -92,14 +95,14 @@ const EditorDashboard = () => {
                   to="/editar/regiones/nueva" 
                   variant="primary"
                 >
-                  Nueva Región
+                  {tAdmin('new-region')}
                 </Button>
                 <Button 
                   as={Link} 
                   to="/editar/regiones" 
                   variant="outline-primary"
                 >
-                  Ver Todas las Regiones
+                  {tAdmin('see-all-btn')}
                 </Button>
               </div>
             </Card.Body>
@@ -115,9 +118,9 @@ const EditorDashboard = () => {
               style={{ height: '200px', objectFit: 'cover' }}
             />
             <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-center">Gestión de Etiquetas</Card.Title>
+              <Card.Title className="text-center">{tAdmin('tag-management')}</Card.Title>
               <Card.Text className="text-center">
-                Administra las etiquetas para boletines
+              {tAdmin('tag-management-description')}
               </Card.Text>
               <div className="mt-auto d-grid gap-2">
                 <Button 
@@ -125,14 +128,14 @@ const EditorDashboard = () => {
                   to="/editar/etiquetas/nueva" 
                   variant="primary"
                 >
-                  Nueva Etiqueta
+                  {tAdmin('new-tag')}
                 </Button>
                 <Button 
                   as={Link} 
                   to="/editar/etiquetas" 
                   variant="outline-primary"
                 >
-                  Ver Todas las Etiquetas
+                  {tAdmin('see-all-btn')}
                 </Button>
               </div>
             </Card.Body>

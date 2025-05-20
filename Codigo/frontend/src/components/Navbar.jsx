@@ -74,9 +74,9 @@ const Navbar = () => {
   // Función para mostrar el nombre del rol de forma legible
   const getRoleName = (role) => {
     const roles = {
-      admin: "Administrador",
-      editor: "Editor",
-      viewer: "Visualizador"
+      admin: tNavbar("admin"),
+      editor: tNavbar("editor"),
+      viewer: tNavbar("viewer")
     };
     return roles[role] || role;
   };
@@ -107,11 +107,11 @@ const Navbar = () => {
             
             {/* Mostrar enlace a Admin solo para usuarios con rol admin */}
             {isAuthenticated && user?.role === 'admin' && (
-              <Link className="nav-link" to="/admin">Administración</Link>
+              <Link className="nav-link" to="/admin">{tNavbar('admin-panel')}</Link>
             )}
             {/* Mostrar enlace a Editor solo para usuarios con rol editor */}
             {isAuthenticated && user?.role === 'editor' && (
-              <Link className="nav-link" to="/editar">Editar</Link>
+              <Link className="nav-link" to="/editar">{tNavbar('editor-panel')}</Link>
             )}
           </div>
           
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                   <li>
                     <Link className="dropdown-item" to="/perfil">
-                      <i className="bi bi-person me-2"></i>{t('profile')}
+                      <i className="bi bi-person me-2"></i>{tNavbar('profile')}
                     </Link>
                   </li>
                   
@@ -141,7 +141,15 @@ const Navbar = () => {
                   {user?.role === 'admin' && (
                     <li>
                       <Link className="dropdown-item" to="/admin">
-                        <i className="bi bi-gear me-2"></i>Panel de Administración
+                        <i className="bi bi-gear me-2"></i>{tNavbar('admin-panel')}
+                      </Link>
+                    </li>
+                  )}
+                  {/* Mostrar opción de edicion solo para editores */}
+                  {user?.role === 'editor' && (
+                    <li>
+                      <Link className="dropdown-item" to="/editar">
+                        <i className="bi bi-gear me-2"></i>{tNavbar('editor-panel')}
                       </Link>
                     </li>
                   )}
@@ -152,7 +160,7 @@ const Navbar = () => {
                       className="dropdown-item text-danger" 
                       onClick={handleLogout}
                     >
-                      <i className="bi bi-box-arrow-right me-2"></i>{t('logout')}
+                      <i className="bi bi-box-arrow-right me-2"></i>{tCommon('logout')}
                     </button>
                   </li>
                 </ul>
