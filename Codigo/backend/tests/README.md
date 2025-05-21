@@ -3,9 +3,9 @@
 Endpoint: `POST /api/auth/login/`
 
 Para usar realziar el test, ejecute lo siguiente en la terminal, estando en la carpeta "Codigo" del proyecto:
-'''
+```
 python -m unittest backend.tests.test_login -v
-'''
+```
 
 | Nº | Descripción                     | Inputs                                | Salida esperada                                              | Contexto de ejecución                        |
 |----|----------------------------------|----------------------------------------|---------------------------------------------------------------|----------------------------------------------|
