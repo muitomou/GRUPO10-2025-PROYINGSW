@@ -2,7 +2,7 @@
 
 Endpoint: `POST /api/auth/login/`
 
-Para usar realziar el test, ejecute lo siguiente en la terminal, estando en la carpeta "Codigo" del proyecto:
+Para usar realizar el test, ejecute lo siguiente en la terminal, estando en la carpeta "Codigo" del proyecto:
 ```
 python -m unittest backend.tests.test_login -v
 ```
