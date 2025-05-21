@@ -2,6 +2,11 @@
 
 Endpoint: `POST /api/auth/login/`
 
+Para usar realziar el test, ejecute lo siguiente en la terminal, estando en la carpeta "Codigo" del proyecto:
+'''
+python -m unittest backend.tests.test_login -v
+'''
+
 | Nº | Descripción                     | Inputs                                | Salida esperada                                              | Contexto de ejecución                        |
 |----|----------------------------------|----------------------------------------|---------------------------------------------------------------|----------------------------------------------|
 | 1  | Login exitoso                   | username=`usuario_prueba`<br>password=`12345678` | 200 OK, JSON con token y datos del usuario                    | Usuario creado previamente desde el frontend |
