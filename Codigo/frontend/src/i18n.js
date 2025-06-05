@@ -19,7 +19,7 @@ import commonEN from './locales/en/common.json';
 import footerEN from './locales/en/footer.json';
 import homeEN from './locales/en/home.json';
 import navbarEN from './locales/en/navbar.json';
-import profileEN from './locales/es/profile.json';
+import profileEN from './locales/en/profile.json';
 import adminEN from './locales/en/admin.json';
 
 i18n

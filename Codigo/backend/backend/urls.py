@@ -37,7 +37,7 @@ urlpatterns = [
     path('api/auth/user/<int:pk>/', UserUpdateView.as_view(), name='user-update'),
     path('api/auth/user/me/', CurrentUserView.as_view(), name='current-user'),
     path('api/boletines/crear/', BoletinCreateView.as_view(), name='crear-boletin'),
-    path('api/boletines/', BoletinListView.as_view(), name='boletines'),
-    path('api/boletines/<int:id>/', BoletinDetailView.as_view(), name='boletin-detail'),
+    #path('api/boletines/', BoletinListView.as_view(), name='boletines'),
+    #path('api/boletines/<int:id>/', BoletinDetailView.as_view(), name='boletin-detail'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +router.urls

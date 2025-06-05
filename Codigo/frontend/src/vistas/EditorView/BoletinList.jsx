@@ -35,6 +35,7 @@ const BoletinList = () => {
 
   const confirmDelete = async () => {
     try {
+      const token = localStorage.getItem("token");
       await axios.delete(`http://localhost:8000/api/boletines/${boletinToDelete.id}/`,
         {
             headers: {
@@ -45,6 +46,7 @@ const BoletinList = () => {
       setBoletines(boletines.filter(b => b.id !== boletinToDelete.id));
       setShowDeleteModal(false);
     } catch (err) {
+      console.log(err)
       setError('Error al eliminar el boletín');
     }
   };
