@@ -8,9 +8,8 @@ WORKDIR /frontend
 COPY ./frontend/package*.json ./
 
 # Instala las dependencias usando npm ci para entornos de producción
-RUN npm ci
-
-RUN npm install
+RUN npm ci \
+    install
 
 # Copia el resto del código fuente
 COPY ./frontend .
