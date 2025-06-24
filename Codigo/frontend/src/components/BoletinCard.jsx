@@ -14,12 +14,6 @@ const BoletinCard = ({ data }) => {
     regiones = [],
     categorias = []
   } = safeData;
- /*
-  // Manejo seguro de la descripción
-  const shortDescription = descripcion 
-    ? `${descripcion.substring(0, 100)}${descripcion.length > 100 ? '...' : ''}`
-    : 'Sin descripción';
- */
   
   let shortDescription = 'Sin descripción';
 
