@@ -26,7 +26,7 @@ class Etiqueta(models.Model):
 
 class Boletin(models.Model):
     titulo = models.CharField(max_length=200)
-    descripcion = models.TextField( blank = True, null = True)
+    descripcion = models.TextField( blank = True)
     archivo_pdf = models.FileField(upload_to = 'boletines/pdfs/', blank = True, null = True)
     imagen = models.ImageField(upload_to = 'boletines/images/', blank = True, null = True)
     regiones = models.ManyToManyField(Region)

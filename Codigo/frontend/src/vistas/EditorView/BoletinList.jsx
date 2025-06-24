@@ -58,7 +58,7 @@ const BoletinList = () => {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Listado de Boletines</h2>
-        <Button as={Link} to="/admin/boletines/nuevo" variant="success">
+        <Button as={Link} to="/editar/boletines/nuevo" variant="success">
           + Nuevo Boletín
         </Button>
       </div>
@@ -83,7 +83,7 @@ const BoletinList = () => {
                 <Button 
                   variant="primary" 
                   size="sm" 
-                  onClick={() => navigate(`/admin/boletines/editar/${boletin.id}`)}
+                  onClick={() => navigate(`/editar/boletines/editar/${boletin.id}`)}
                   className="me-2"
                 >
                   Editar
