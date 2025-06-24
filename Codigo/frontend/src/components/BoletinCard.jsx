@@ -14,11 +14,20 @@ const BoletinCard = ({ data }) => {
     regiones = [],
     categorias = []
   } = safeData;
-
+ /*
   // Manejo seguro de la descripción
   const shortDescription = descripcion 
     ? `${descripcion.substring(0, 100)}${descripcion.length > 100 ? '...' : ''}`
     : 'Sin descripción';
+ */
+  
+  let shortDescription = 'Sin descripción';
+
+  if (descripcion) {
+    const recorte = descripcion.substring(0, 100);
+    const sufijo = descripcion.length > 100 ? '...' : '';
+    shortDescription = `${recorte}${sufijo}`;
+  }
 
   // Formatear fecha
   const formattedDate = new Date(fecha_publicacion).toLocaleDateString('es-CL', {
