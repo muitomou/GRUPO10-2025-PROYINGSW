@@ -18,3 +18,5 @@ services:
       - 8000:8000
     volumes:
       - ./backend:/backend
+    environment:
+      - SECRET_KEY=e&zk+1$2s4l=nz(q7%=v4z&avff8%6#p_)+pbsgxntn@b1$0le
